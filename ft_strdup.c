@@ -1,37 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: christalbruneli <christalbruneli@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/16 19:34:38 by christalbru       #+#    #+#             */
-/*   Updated: 2021/08/18 16:47:36 by christalbru      ###   ########.fr       */
+/*   Created: 2021/08/18 12:36:48 by christalbru       #+#    #+#             */
+/*   Updated: 2021/08/18 16:18:09 by christalbru      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
-char	*ft_strnstr(const char *big, const char *little, size_t len)
+char	*ft_strdup(const char *s1)
 {
-	size_t	i;
-	size_t	j;
+	char	*s2;
+	size_t	size;
 
-	i = 0;
-	j = 0;
-	if (little[j] == '\0')
-		return ((char *)big);
-	while (i < len && big[i])
-	{
-		if (big[i] == little[0])
-		{
-			j = 1;
-			while (big[i + j] == little[j] && little[j] && i + j < len)
-				j++;
-			if (little[j] == '\0')
-				return ((char *)&big[i]);
-		}
-		i++;
-	}
-	return (NULL);
+	size = ft_strlen(s1) + 1;
+	s2 = malloc(size * sizeof(char));
+	if (!s2)
+		return (NULL);
+	ft_strlcpy(s2, s1, size);
+	return (s2);
 }
