@@ -6,32 +6,33 @@
 /*   By: christalbruneli <christalbruneli@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/16 19:31:01 by christalbru       #+#    #+#             */
-/*   Updated: 2021/08/16 20:02:06 by christalbru      ###   ########.fr       */
+/*   Updated: 2021/08/18 17:55:19 by christalbru      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-int	ft_atoi(char *str)
+int	ft_atoi(const char *nptr)
 {
-	int	sign;
-	int	num;
+	unsigned long long		n;
+	int						i;
+	int						sign;
 
-	while ((9 <= *str && *str <= 15) || *str == ' ')
-		++str;
+	i = 0;
 	sign = 1;
-	while (*str == '+' || *str == '-')
+	n = 0;
+	while (nptr[i] == ' ' || (nptr[i] >= 9 && nptr[i] <= 13))
+		i++;
+	if (nptr[i] == '-')
+		sign = -1;
+	if (nptr[i] == '+' || nptr[i] == '-')
+		i++;
+	while (ft_isdigit(nptr[i]))
 	{
-		if (*str == '-')
-			sign = -sign;
-		++str;
+		n = n * 10 + (nptr[i] - 48);
+		i++;
 	}
-	num = 0;
-	while ('9' >= *str && *str >= '0')
-	{
-		num *= 10;
-		num += sign * (*str - '0');
-		++str;
-	}
-	return (num);
+	if (n > 9223372036854775807)
+		return (sign == 1 ? -1 : 0);
+	return (n * sign);
 }
