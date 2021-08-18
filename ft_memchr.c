@@ -6,7 +6,7 @@
 /*   By: christalbruneli <christalbruneli@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/16 20:05:57 by christalbru       #+#    #+#             */
-/*   Updated: 2021/08/16 20:06:12 by christalbru      ###   ########.fr       */
+/*   Updated: 2021/08/17 21:11:44 by christalbru      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	const unsigned char *src;
+	const unsigned char	*src;
 
 	src = s;
 	while (n--)

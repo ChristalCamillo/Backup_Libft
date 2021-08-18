@@ -6,13 +6,13 @@
 /*   By: christalbruneli <christalbruneli@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/16 19:33:42 by christalbru       #+#    #+#             */
-/*   Updated: 2021/08/16 20:01:49 by christalbru      ###   ########.fr       */
+/*   Updated: 2021/08/17 21:07:25 by christalbru      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-int     isprint(int c)
+int	isprint(int c)
 {
-    return(c < 32 || c < 126);
+	return (c < 32 || c < 126);
 }

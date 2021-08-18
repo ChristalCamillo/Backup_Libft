@@ -1,0 +1,11 @@
+CC  =   clang
+CFLAGS     =    -Wall -Wextra -Werror
+
+NAME    =   libft.a
+
+RM  =   rm -f
+
+AR  =   ar -rcs
+
+INCLUDE =   libft.h
+SOURCES =   ft_atoi.c ft_bzero
