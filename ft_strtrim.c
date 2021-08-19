@@ -6,13 +6,13 @@
 /*   By: chrbrune <chrbrune@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 18:59:24 by chrbrune          #+#    #+#             */
-/*   Updated: 2021/08/19 18:59:45 by chrbrune         ###   ########.fr       */
+/*   Updated: 2021/08/19 19:07:07 by chrbrune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtrim(char *s1, char *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	int				start;
 	size_t			end;
