@@ -6,17 +6,15 @@
 /*   By: christalbruneli <christalbruneli@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/16 19:33:37 by christalbru       #+#    #+#             */
-/*   Updated: 2021/08/17 21:06:19 by christalbru      ###   ########.fr       */
+/*   Updated: 2021/08/18 19:27:24 by christalbru      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
-int	isdigit(int c)
+int	ft_isdigit(int c)
 {
-	if (c >= 0 && c <= 9)
-	{
-		return (c);
-	}
+	if (c >= '0' && c <= '9')
+		return (1);
 	return (0);
 }

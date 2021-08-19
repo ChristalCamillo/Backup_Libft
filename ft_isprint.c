@@ -6,13 +6,15 @@
 /*   By: christalbruneli <christalbruneli@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/16 19:33:42 by christalbru       #+#    #+#             */
-/*   Updated: 2021/08/17 21:07:25 by christalbru      ###   ########.fr       */
+/*   Updated: 2021/08/18 19:30:22 by christalbru      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
-int	isprint(int c)
+int	ft_isprint(int c)
 {
-	return (c < 32 || c < 126);
+	if (c >= ' ' && c <= '~')
+		return (1);
+	return (0);
 }

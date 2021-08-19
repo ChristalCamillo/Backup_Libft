@@ -1,33 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chrbrune <chrbrune@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/18 16:19:21 by christalbru       #+#    #+#             */
-/*   Updated: 2021/08/19 18:16:35 by chrbrune         ###   ########.fr       */
+/*   Created: 2021/08/19 18:59:24 by chrbrune          #+#    #+#             */
+/*   Updated: 2021/08/19 18:59:45 by chrbrune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_strtrim(char *s1, char *set)
 {
-	char	*sstr;
-	size_t	strlen;
+	int				start;
+	size_t			end;
+	unsigned char	*ss1;
+	unsigned char	*sset;
 
-	if (s == NULL)
+	if (!s1 || !set)
 		return (NULL);
-	strlen = ft_strlen((char *)s);
-	if (start > strlen)
+	ss1 = (unsigned char *)s1;
+	sset = (unsigned char *)set;
+	end = ft_strlen((char *)ss1) - 1;
+	start = 0;
+	while (ft_strchr((char *)sset, ss1[start]))
+		start++;
+	if (start >= (int)ft_strlen((char *)ss1))
 		return (ft_strdup(""));
-	if (strlen - start >= len)
-		sstr = (char *)malloc((len + 1) * sizeof(char));
-	else
-		sstr = (char *)malloc((strlen - start + 1) * sizeof(char));
-	if (sstr == NULL)
-		return (NULL);
-	ft_strlcpy(sstr, (s + start), (len + 1));
-	return (sstr);
+	while (ft_strchr((char *)sset, ss1[end]))
+		end--;
+	return (ft_substr((char *)ss1, start, end - start + 1));
 }

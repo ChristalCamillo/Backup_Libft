@@ -6,11 +6,11 @@
 /*   By: christalbruneli <christalbruneli@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/16 19:34:15 by christalbru       #+#    #+#             */
-/*   Updated: 2021/08/17 21:21:45 by christalbru      ###   ########.fr       */
+/*   Updated: 2021/08/18 18:25:24 by christalbru      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 unsigned int	ft_dest_len(char *dest, size_t size)
 {
@@ -22,7 +22,7 @@ unsigned int	ft_dest_len(char *dest, size_t size)
 	return (i);
 }
 
-size_t	ft_strlcat(char *dest, char *src, size_t size)
+size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
 	unsigned int	i;
 	unsigned int	j;

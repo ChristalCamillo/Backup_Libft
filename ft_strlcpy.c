@@ -3,35 +3,34 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: christalbruneli <christalbruneli@studen    +#+  +:+       +#+        */
+/*   By: chrbrune <chrbrune@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/16 19:30:15 by christalbru       #+#    #+#             */
-/*   Updated: 2021/08/16 20:02:09 by christalbru      ###   ########.fr       */
+/*   Updated: 2021/08/19 18:21:35 by chrbrune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
-unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
+size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
-	unsigned int	indice;
-	unsigned int	src_length;
+	size_t	i;
+	size_t	count;
 
-	src_length = 0;
-	indice = 0;
-	while (indice < size - 1 && src[indice] != '\0')
+	if (!dest || !src)
+		return (0);
+	i = 0;
+	count = 0;
+	while (src[count] != '\0')
+		count++;
+	if (size != 0)
 	{
-		dest[indice] = src[indice];
-		indice ++;
-	}
-	while (indice < size)
-	{
-		dest[indice] = '\0';
-		indice++;
-	}
-	while (src[src_length] != '\0')
-	{
-		src_length++;
-	}
-	return (dest);
+		while (src[i] != '\0' && i < (size - 1))
+		{
+			dest[i] = src[i];
+			i++;
+		}
+		dest[i] = '\0';
+	}	
+	return (count);
 }

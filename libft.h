@@ -40,8 +40,8 @@ size_t				ft_strlen(const char *s);
 char				*ft_strdup(const char *s1);
 char				*ft_strncat(char *s1, const char *s2, size_t n);
 char				*ft_strncpy(char *dst, const char *src, size_t len);
-size_t				ft_strlcat(char *dst, const char *src, size_t dstsize);
-size_t				ft_strlcpy(char *dst, const char *src, size_t dstsize);
+size_t				ft_strlcat(char *dest, const char *src, size_t size);
+size_t				ft_strlcpy(char *dest, const char *src, size_t size);
 /*
 ** --- CHARACTER CLASSIFICATION FUNCTIONS ---
 */

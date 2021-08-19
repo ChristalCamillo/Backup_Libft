@@ -6,11 +6,11 @@
 /*   By: christalbruneli <christalbruneli@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/16 19:34:38 by christalbru       #+#    #+#             */
-/*   Updated: 2021/08/18 16:47:36 by christalbru      ###   ########.fr       */
+/*   Updated: 2021/08/18 18:19:05 by christalbru      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
